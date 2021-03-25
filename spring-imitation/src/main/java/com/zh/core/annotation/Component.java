@@ -4,10 +4,7 @@ import java.lang.annotation.*;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Component
-public @interface Configuration {
-
+@Documented
+public @interface Component {
     String value() default "";
-
-    boolean proxyBeanMethods() default true;
 }

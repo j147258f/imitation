@@ -2,8 +2,15 @@ package com.zh.core.context;
 
 import com.zh.core.bean.BeanDefinition;
 import com.zh.core.bean.BeanDefinitionRegistry;
+import com.zh.core.bean.BeanFactory;
+
+import java.util.List;
 
 public abstract class AbstractApplicationContext implements ApplicationContext, BeanDefinitionRegistry {
+
+    //protected 事件监听list
+
+    //protected 事件list
 
     @Override
     public String name() {
@@ -56,6 +63,29 @@ public abstract class AbstractApplicationContext implements ApplicationContext, 
 				finishRefresh();
 			}
         */
+    }
+
+    private void prepareRefresh(){
+        //initPropertySources
+
+        //初始化监听器list
+
+        //初始化事件list
+    }
+
+    protected BeanFactory obtainFreshBeanFactory(){
+        //确认并发
+
+        //返回默认的BeanFactory
+
+        //todo beanFactory class
+        return null;
+    }
+
+    protected void prepareBeanFactory(BeanFactory beanFactory){
+        //由于很多内置组件也是bean  因此要手动设置：忽略依赖   手动设置bean之前的依赖   注册BeanPostProcessor
+
+
     }
 
     @Override
